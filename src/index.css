@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Public Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #343a40;
+  /* background-color: #f2f3f5; */
+}
+
+h1 {
+  font-style: normal;
+  font-size: calc(1.4rem + 1.7vw);
+  font-weight: 700;
+  line-height: 120%;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.container {
+}
