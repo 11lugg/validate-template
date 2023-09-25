@@ -1,10 +1,8 @@
 // import React, { useEffect, useState } from "react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
-import templateImage from "./assets/template_image.png";
 
-// import { client } from "./prismic";
-// import { PrismicRichText } from "@prismicio/react";
+import { client } from "./prismic";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -13,19 +11,22 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 function App() {
-  // const [document, setDocument] = useState(null);
+  const [document, setDocument] = useState(null);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     const response = await client.getSingle("homepage");
-  //     console.log(response);
-  //     if (response) {
-  //       setDocument(response);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await client.getSingle("homepage");
+      if (response) {
+        setDocument(response.data);
+      }
+    };
 
-  //   fetchData();
-  // }, []);
+    fetchData();
+  }, []);
+
+  if (!document) return null;
+
+  const { company_name, main_header, tagline, description, image } = document;
 
   return (
     <>
@@ -33,23 +34,20 @@ function App() {
       <header>
         <Container>
           <Row>
-            <Col>Company Name</Col>
+            <Col>{company_name}</Col>
           </Row>
           <hr />
           <Row className="hero">
             <Col>
               <Col>
-                <h1>Automate PDFs with our smart form integration</h1>
+                <h1>{main_header}</h1>
               </Col>
               <Col>
-                <h2>Say Goodbye to Manual Entry. Hello, Efficiency!</h2>
+                <h2>{tagline}</h2>
               </Col>
 
               <Col>
-                <p>
-                  Our platform seamlessly takes your form data and auto-fills
-                  your PDFs, saving you time and reducing errors.
-                </p>
+                <p>{description}</p>
               </Col>
               <Col>
                 <Row>
@@ -78,7 +76,7 @@ function App() {
             <Col
               className="img"
               style={{
-                backgroundImage: `url(${templateImage})`,
+                backgroundImage: `url(${image.url})`,
               }}
             ></Col>
           </Row>
