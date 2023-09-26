@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { HelmetProvider } from "react-helmet-async";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
@@ -12,8 +13,10 @@ import { client } from "./prismic";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <PrismicProvider client={client}>
-      <App />
-    </PrismicProvider>
+    <HelmetProvider>
+      <PrismicProvider client={client}>
+        <App />
+      </PrismicProvider>
+    </HelmetProvider>
   </React.StrictMode>
 );

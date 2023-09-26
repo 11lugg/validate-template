@@ -13,6 +13,8 @@ import Form from "react-bootstrap/Form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
+import HeadComponent from "./components/HeadComponent";
+
 function App() {
   const [document, setDocument] = useState(null);
 
@@ -38,10 +40,17 @@ function App() {
     description,
     image,
     price_plan_list,
+    favicon,
+    website_title,
   } = document;
 
   return (
     <>
+      <HeadComponent
+        favicon={favicon}
+        website_title={website_title}
+        description={description}
+      />
       <header>
         <Container>
           <Row className="nav">
