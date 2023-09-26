@@ -1,9 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
 .row {
   align-items: center;
 }
 
-.hero > .col:first-child {
-  padding-left: 5%;
+.nav {
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: 1.5em;
+}
+
+.nav > .col {
+  font-style: normal;
+  font-family: "Lobster", cursive;
+  font-size: calc(1rem + 1.4vw);
+  font-weight: 700;
+  line-height: 120%;
+  color: #0c6dfd;
+  cursor: pointer;
+}
+
+.hero {
+  margin-left: 4%;
+}
+
+.price-option-even {
+  margin-bottom: 3em;
+}
+
+.price-option-odd {
+  margin-bottom: 3em;
+}
+
+.price-option-odd > .row {
+  margin-left: 4%;
+  margin-right: 4%;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.price-option-odd > .row > .col {
+  height: 500px;
+}
+
+.price-option-even > .row > .col {
+  height: 500px;
+}
+
+.price-option-even > .row {
+  margin-left: 4%;
+  margin-right: 4%;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+/* Price option odd left side */
+
+.price-option-odd > .row > .col:first-child {
+  border: 3px solid #f7f7fc;
+  border-radius: 10px 0px 0px 10px;
+  padding-left: 76px;
+  padding-right: 76px;
+  padding-top: calc((500px - 299.05px) / 2);
+  padding-bottom: calc((500px - 299.05px) / 2);
+}
+
+.price-option-odd > .row > .col:first-child > .row > .col-12 > .btn {
+  width: 100%;
+}
+
+.price-option-odd > .row > .col:first-child > .row {
+  margin-bottom: 1rem;
+}
+
+.price-option-odd
+  > .row
+  > .col:first-child
+  > .row:first-child
+  > div:last-child
+  > div:first-child {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  color: #6f6c90;
+}
+
+.price-option-odd
+  > .row
+  > .col:first-child
+  > .row:first-child
+  > div:last-child
+  > div:last-child {
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 35px;
+}
+
+.price-option-odd
+  > .row
+  > .col:first-child
+  > .row:first-child
+  > div:first-child
+  > img {
+  width: 100%;
+}
+
+.price-option-odd > .row > .col:first-child > .row:nth-child(2) > div {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  color: #6f6c91;
+}
+
+.price-option-odd > .row > .col:first-child > .row:nth-child(3) > div {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  color: #6f6c91;
+}
+
+.price-option-odd > .row > .col:first-child > .row:nth-child(3) > div > span {
+  font-size: 54px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 66px;
+  color: #343a40;
+}
+
+/* Price option odd right side */
+
+.price-option-odd > .row > .col:last-child {
+  background-color: #f7f7fc;
+  border-radius: 0px 10px 10px 0px;
+  padding-left: 76px;
+  padding-right: 76px;
+  padding-top: calc((500px - 204px) / 2);
+  padding-bottom: calc((500px - 204px) / 2);
+}
+
+.price-option-odd > .row > .col:last-child > p {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.price-option-odd > .row > .col:last-child > ul {
+  list-style-type: none;
+}
+
+.price-option-odd > .row > .col:last-child > ul > li {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  margin-bottom: 16px;
+}
+
+.price-option-odd > .row > .col:last-child > ul > li:last-child {
+  margin-bottom: 0;
+}
+
+.price-option-odd > .row > .col:last-child > ul > li > svg {
+  margin-right: 10px;
+  color: #0c6dfd;
+}
+
+/* Price option even right side */
+
+.price-option-even > .row > .col:last-child {
+  border: 3px solid #f7f7fc;
+  border-radius: 0px 10px 10px 0px;
+  padding-left: 76px;
+  padding-right: 76px;
+  padding-top: calc((500px - 299.05px) / 2);
+  padding-bottom: calc((500px - 299.05px) / 2);
+}
+
+.price-option-even > .row > .col:last-child > .row > .col-12 > .btn {
+  width: 100%;
+}
+
+.price-option-even > .row > .col:last-child > .row {
+  margin-bottom: 1rem;
+}
+
+.price-option-even
+  > .row
+  > .col:last-child
+  > .row:first-child
+  > div:last-child
+  > div:first-child {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  color: #6f6c90;
+}
+
+.price-option-even
+  > .row
+  > .col:last-child
+  > .row:first-child
+  > div:last-child
+  > div:last-child {
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 35px;
+}
+
+.price-option-even
+  > .row
+  > .col:last-child
+  > .row:first-child
+  > div:first-child
+  > img {
+  width: 100%;
+}
+
+.price-option-even > .row > .col:last-child > .row:nth-child(2) > div {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  color: #6f6c91;
+}
+
+.price-option-even > .row > .col:last-child > .row:nth-child(3) > div {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  color: #6f6c91;
+}
+
+.price-option-even > .row > .col:last-child > .row:nth-child(3) > div > span {
+  font-size: 54px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 66px;
+  color: #343a40;
+}
+
+/* Price option even left side */
+
+.price-option-even > .row > .col:first-child {
+  background-color: #f7f7fc;
+  border-radius: 10px 0px 0px 10px;
+  padding-left: 76px;
+  padding-right: 76px;
+  padding-top: calc((500px - 204px) / 2);
+  padding-bottom: calc((500px - 204px) / 2);
+}
+
+.price-option-even > .row > .col:first-child > ul > li {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  margin-bottom: 16px;
+}
+
+.price-option-even > .row > .col:first-child > ul > li:last-child {
+  margin-bottom: 0;
+}
+
+.price-option-even > .row > .col:first-child > p {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.price-option-even > .row > .col:first-child > ul {
+  list-style-type: none;
+}
+
+.price-option-even > .row > .col:first-child > ul > li > svg {
+  margin-right: 10px;
+  color: #0c6dfd;
 }
 
 .img {

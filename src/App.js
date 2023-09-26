@@ -10,6 +10,9 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+
 function App() {
   const [document, setDocument] = useState(null);
 
@@ -26,17 +29,24 @@ function App() {
 
   if (!document) return null;
 
-  const { company_name, main_header, tagline, description, image } = document;
+  console.log(document);
+
+  const {
+    company_name,
+    main_header,
+    tagline,
+    description,
+    image,
+    price_plan_list,
+  } = document;
 
   return (
     <>
-      <hr />
       <header>
         <Container>
-          <Row>
+          <Row className="nav">
             <Col>{company_name}</Col>
           </Row>
-          <hr />
           <Row className="hero">
             <Col>
               <Col>
@@ -82,19 +92,128 @@ function App() {
           </Row>
         </Container>
       </header>
-      <hr />
       <main>
         <Container>
-          <section>price list</section>
-          <hr />
-          <section>price option 1</section>
-          <hr />
-          <section>price option 2</section>
-          <hr />
-          <section> price option 3</section>
+          {price_plan_list.map((price_plan, index) => {
+            const odd = (
+              <>
+                <Col>
+                  <Row>
+                    <Col xs={3}>
+                      <img
+                        src={price_plan.icon.url}
+                        alt={price_plan.icon.name}
+                      ></img>
+                    </Col>
+                    <Col xs={9}>
+                      <Col xs={12}>{price_plan.who_is_it_for}</Col>
+                      <Col xs={12}>{price_plan.header}</Col>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xs={12}>{price_plan.price_description}</Col>
+                  </Row>
+                  <Row>
+                    <Col xs={12}>
+                      <span>£{price_plan.price}</span> /
+                      {price_plan.payment_frequency}
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xs={12}>
+                      <Button size="lg">Submit</Button>
+                    </Col>
+                  </Row>
+                </Col>
+                <Col>
+                  <p>Whats included</p>
+                  <ul>
+                    <li>
+                      <FontAwesomeIcon icon={faCheckCircle} /> Convert form data
+                      quickly
+                    </li>
+                    <li>
+                      <FontAwesomeIcon icon={faCheckCircle} /> Secure,
+                      accessible PDF storage
+                    </li>
+                    <li>
+                      <FontAwesomeIcon icon={faCheckCircle} /> Works with
+                      popular forms
+                    </li>
+                    <li>
+                      <FontAwesomeIcon icon={faCheckCircle} /> Our support
+                    </li>
+                  </ul>
+                </Col>
+              </>
+            );
+
+            const even = (
+              <>
+                <Col>
+                  <p>Whats included</p>
+                  <ul>
+                    <li>
+                      <FontAwesomeIcon icon={faCheckCircle} /> Convert form data
+                      quickly
+                    </li>
+                    <li>
+                      <FontAwesomeIcon icon={faCheckCircle} /> Secure,
+                      accessible PDF storage
+                    </li>
+                    <li>
+                      <FontAwesomeIcon icon={faCheckCircle} /> Works with
+                      popular forms
+                    </li>
+                    <li>
+                      <FontAwesomeIcon icon={faCheckCircle} /> Our support
+                    </li>
+                  </ul>
+                </Col>
+                <Col>
+                  <Row>
+                    <Col xs={3}>
+                      <img
+                        src={price_plan.icon.url}
+                        alt={price_plan.icon.name}
+                      ></img>{" "}
+                    </Col>
+                    <Col xs={9}>
+                      <Col xs={12}>{price_plan.who_is_it_for}</Col>
+                      <Col xs={12}>{price_plan.header}</Col>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xs={12}>{price_plan.price_description}</Col>
+                  </Row>
+                  <Row>
+                    <Col xs={12}>
+                      <span>£{price_plan.price}</span> /
+                      {price_plan.payment_frequency}
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xs={12}>
+                      <Button size="lg">Submit</Button>
+                    </Col>
+                  </Row>
+                </Col>
+              </>
+            );
+
+            const oddOrEven = index % 2 === 0 ? odd : even;
+
+            return (
+              <section
+                key={index}
+                className={`price-option-${index % 2 === 0 ? "odd" : "even"}`}
+              >
+                <Row>{oddOrEven}</Row>
+              </section>
+            );
+          })}
         </Container>
       </main>
-      <hr />
       <footer></footer>
     </>
   );
