@@ -53,7 +53,19 @@ function App() {
       <header>
         <Container>
           <Row className="nav">
-            <Col>{company_name}</Col>
+            <Col xs={7} lg={9} className="col">
+              {company_name}
+            </Col>
+            <Col xs={5} lg={3} className="col">
+              <Row>
+                <Col className="d-none d-sm-block" sm={6}>
+                  <Button variant="link">Prices</Button>
+                </Col>
+                <Col xs={12} sm={6}>
+                  <Button>Sign Up</Button>
+                </Col>
+              </Row>
+            </Col>
           </Row>
           <Row className="hero mt-5 mt-md-0">
             <Col xs={12} md={6}>
@@ -109,13 +121,13 @@ function App() {
               <>
                 <Col className="col" xs={12} lg={6}>
                   <Row>
-                    <Col xs={3}>
+                    <Col xs={4} sm={3}>
                       <img
                         src={price_plan.icon.url}
                         alt={price_plan.icon.name}
                       ></img>
                     </Col>
-                    <Col xs={9}>
+                    <Col xs={8} sm={9}>
                       <Col xs={12}>{price_plan.who_is_it_for}</Col>
                       <Col xs={12}>{price_plan.header}</Col>
                     </Col>
@@ -190,13 +202,13 @@ function App() {
                   lg={{ span: 6, order: "last" }}
                 >
                   <Row>
-                    <Col xs={3}>
+                    <Col xs={4} sm={3}>
                       <img
                         src={price_plan.icon.url}
                         alt={price_plan.icon.name}
                       ></img>{" "}
                     </Col>
-                    <Col xs={9}>
+                    <Col xs={8} sm={9}>
                       <Col xs={12}>{price_plan.who_is_it_for}</Col>
                       <Col xs={12}>{price_plan.header}</Col>
                     </Col>
