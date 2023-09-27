@@ -1,6 +1,6 @@
 # **Validate Template**
 
-A robust web solution to validate new products. This template is completely powered by the headless CMS Primic
+A comprehensive web platform designed for new product validation, fully driven by the Prismic headless CMS.
 
 ### **Live Demo**
 
