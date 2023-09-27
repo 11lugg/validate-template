@@ -22,6 +22,7 @@
 
 .hero {
   margin-left: 4%;
+  margin-right: 4%;
 }
 
 .price-option-even {
@@ -67,6 +68,12 @@
   padding-right: 76px;
   padding-top: calc((500px - 299.05px) / 2);
   padding-bottom: calc((500px - 299.05px) / 2);
+}
+
+@media (max-width: 992px) {
+  .price-option-odd > .row > .col:first-child {
+    border-radius: 10px 10px 0px 0px;
+  }
 }
 
 .price-option-odd > .row > .col:first-child > .row > .col-12 > .btn {
@@ -146,6 +153,12 @@
   padding-bottom: calc((500px - 204px) / 2);
 }
 
+@media (max-width: 992px) {
+  .price-option-odd > .row > .col:last-child {
+    border-radius: 0px 0px 10px 10px;
+  }
+}
+
 .price-option-odd > .row > .col:last-child > p {
   font-size: 18px;
   font-style: normal;
@@ -183,6 +196,12 @@
   padding-right: 76px;
   padding-top: calc((500px - 299.05px) / 2);
   padding-bottom: calc((500px - 299.05px) / 2);
+}
+
+@media (max-width: 992px) {
+  .price-option-even > .row > .col:last-child {
+    border-radius: 10px 10px 00px 0px;
+  }
 }
 
 .price-option-even > .row > .col:last-child > .row > .col-12 > .btn {
@@ -262,6 +281,12 @@
   padding-bottom: calc((500px - 204px) / 2);
 }
 
+@media (max-width: 992px) {
+  .price-option-even > .row > .col:first-child {
+    border-radius: 0px 0px 10px 10px;
+  }
+}
+
 .price-option-even > .row > .col:first-child > ul > li {
   font-size: 18px;
   font-style: normal;
@@ -295,6 +320,12 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+@media (max-width: 767px) {
+  .img {
+    height: 500px;
+  }
 }
 
 .subscribe-form {

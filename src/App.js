@@ -1,4 +1,3 @@
-// import React, { useEffect, useState } from "react";
 import React, { useEffect, useState } from "react";
 import "./App.css";
 
@@ -56,8 +55,8 @@ function App() {
           <Row className="nav">
             <Col>{company_name}</Col>
           </Row>
-          <Row className="hero">
-            <Col>
+          <Row className="hero mt-5 mt-md-0">
+            <Col xs={12} md={6}>
               <Col>
                 <h1>{main_header}</h1>
               </Col>
@@ -70,7 +69,7 @@ function App() {
               </Col>
               <Col>
                 <Row>
-                  <Col xs={8}>
+                  <Col lg={8}>
                     {" "}
                     <Form.Control
                       size="lg"
@@ -79,7 +78,7 @@ function App() {
                       placeholder="Enter email"
                     />
                   </Col>
-                  <Col xs={4}>
+                  <Col lg={4} className="mt-3 mt-lg-0">
                     <Button
                       size="lg"
                       variant="primary"
@@ -93,6 +92,8 @@ function App() {
               </Col>
             </Col>
             <Col
+              xs={12}
+              md={6}
               className="img"
               style={{
                 backgroundImage: `url(${image.url})`,
@@ -106,7 +107,7 @@ function App() {
           {price_plan_list.map((price_plan, index) => {
             const odd = (
               <>
-                <Col>
+                <Col className="col" xs={12} lg={6}>
                   <Row>
                     <Col xs={3}>
                       <img
@@ -120,10 +121,10 @@ function App() {
                     </Col>
                   </Row>
                   <Row>
-                    <Col xs={12}>{price_plan.price_description}</Col>
+                    <Col lg={12}>{price_plan.price_description}</Col>
                   </Row>
                   <Row>
-                    <Col xs={12}>
+                    <Col lg={12}>
                       <span>£{price_plan.price}</span> /
                       {price_plan.payment_frequency}
                     </Col>
@@ -134,7 +135,7 @@ function App() {
                     </Col>
                   </Row>
                 </Col>
-                <Col>
+                <Col className="col" xs={12} lg={6}>
                   <p>Whats included</p>
                   <ul>
                     <li>
@@ -159,7 +160,11 @@ function App() {
 
             const even = (
               <>
-                <Col>
+                <Col
+                  className="col"
+                  xs={{ span: 12, order: "last" }}
+                  lg={{ span: 6, order: "first" }}
+                >
                   <p>Whats included</p>
                   <ul>
                     <li>
@@ -179,7 +184,11 @@ function App() {
                     </li>
                   </ul>
                 </Col>
-                <Col>
+                <Col
+                  className="col"
+                  xs={{ span: 12, order: "first" }}
+                  lg={{ span: 6, order: "last" }}
+                >
                   <Row>
                     <Col xs={3}>
                       <img
@@ -193,10 +202,10 @@ function App() {
                     </Col>
                   </Row>
                   <Row>
-                    <Col xs={12}>{price_plan.price_description}</Col>
+                    <Col lg={12}>{price_plan.price_description}</Col>
                   </Row>
                   <Row>
-                    <Col xs={12}>
+                    <Col lg={12}>
                       <span>£{price_plan.price}</span> /
                       {price_plan.payment_frequency}
                     </Col>
