@@ -1,4 +1,4 @@
-# **Validation Template**
+# **Validate Template**
 
 A robust web solution to validate new products. This template is completely powered by the headless CMS Primic
 
