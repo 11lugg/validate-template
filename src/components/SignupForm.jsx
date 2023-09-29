@@ -18,8 +18,8 @@ function SignupForm() {
   };
 
   return (
-    <Row>
-      <Form onSubmit={onSubmit}>
+    <Form onSubmit={onSubmit}>
+      <Row>
         <Col lg={8} className="mb-3 mb-lg-0">
           <Form.Group controlId="formBasicEmail">
             <Form.Control
@@ -38,8 +38,8 @@ function SignupForm() {
             Submit
           </Button>
         </Col>
-      </Form>
-    </Row>
+      </Row>
+    </Form>
   );
 }
 
