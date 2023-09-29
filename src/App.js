@@ -7,12 +7,12 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
 import HeadComponent from "./components/HeadComponent";
+import SignupForm from "./components/SignupForm";
 
 function App() {
   const [document, setDocument] = useState(null);
@@ -29,8 +29,6 @@ function App() {
   }, []);
 
   if (!document) return null;
-
-  console.log(document);
 
   const {
     company_name,
@@ -80,27 +78,7 @@ function App() {
                 <p>{description}</p>
               </Col>
               <Col>
-                <Row>
-                  <Col lg={8}>
-                    {" "}
-                    <Form.Control
-                      size="lg"
-                      type="email"
-                      className="subscribe-form"
-                      placeholder="Enter email"
-                    />
-                  </Col>
-                  <Col lg={4} className="mt-3 mt-lg-0">
-                    <Button
-                      size="lg"
-                      variant="primary"
-                      className="subscribe-form"
-                      type="submit"
-                    >
-                      Submit
-                    </Button>
-                  </Col>
-                </Row>
+                <SignupForm />
               </Col>
             </Col>
             <Col

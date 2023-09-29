@@ -39,7 +39,7 @@ Follow these steps to set up your local environment:
    npm run start
 ```
 
-## **Deployment to Firebase**
+## **Deployment to Firebase Hosting**
 
 Ensure you're authenticated with Firebase CLI. Then:
 
@@ -49,8 +49,18 @@ Ensure you're authenticated with Firebase CLI. Then:
    npm run build
 ```
 
-2. Deploy to Firebase:
+2. Deploy to Firebase Hosting:
 
 ```bash
-   firebase deploy
+   firebase deploy --only hosting
+```
+
+## **Deployment to Firebase Functions**
+
+Ensure you're authenticated with Firebase CLI. Then:
+
+1. Deploy to Firebase Functions:
+
+```bash
+   firebase deploy --only functions
 ```
