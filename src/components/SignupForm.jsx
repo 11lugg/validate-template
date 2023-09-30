@@ -5,11 +5,13 @@ import jsonp from "jsonp";
 function SignupForm() {
   const [email, setEmail] = useState("");
   const [result, setResult] = useState({ error: "", success: "" });
+  const [loading, setLoading] = useState(false);
   const [placeholder, setPlaceholder] = useState("Enter email");
 
   const onSubmit = (e) => {
     e.preventDefault();
     setResult({ error: "", success: "" });
+    setLoading(true);
 
     const url = process.env.REACT_APP_MAILCHIMP_URL;
 
@@ -18,11 +20,13 @@ function SignupForm() {
     jsonp(`${modifiedUrl}&EMAIL=${email}`, { param: "c" }, (error, data) => {
       if (error) {
         setResult({ ...result, error: error });
+        setLoading(false);
 
         console.error(`Error while fetching data: ${error}`);
         return;
       }
       setResult({ ...result, success: data });
+      setLoading(false);
       setEmail("");
       setPlaceholder("All done!");
     });
@@ -52,13 +56,30 @@ function SignupForm() {
                 onChange={onChange}
                 placeholder={placeholder}
                 value={email}
+                disabled={loading}
               />
             </Form.Group>
           </Col>
 
           <Col lg={4}>
-            <Button className="btn-lg" style={{ width: "100%" }} type="submit">
-              Submit
+            <Button
+              className="btn-lg"
+              style={{ width: "100%" }}
+              type="submit"
+              disabled={loading}
+            >
+              {loading ? (
+                <>
+                  <span
+                    class="spinner-grow spinner-grow-sm"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>{" "}
+                  Loading
+                </>
+              ) : (
+                "Subscribe"
+              )}
             </Button>
           </Col>
         </Row>

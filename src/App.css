@@ -20,7 +20,11 @@
   cursor: pointer;
 }
 
-.nav > .col:last-child > .row > div > button {
+.nav > .col:first-child > a {
+  text-decoration: none;
+}
+
+.nav > .col:last-child > .row > div > a {
   width: 100%;
 }
 
@@ -485,4 +489,34 @@
 
 .subscribe-form {
   width: 100%;
+}
+
+/* Prices page */
+
+.prices {
+  height: 75vh;
+  margin-right: 4%;
+  padding-top: calc((75vh - 369px) / 2);
+  padding-bottom: calc((75vh - 369px) / 2);
+}
+
+.prices > div {
+  text-align: center;
+}
+
+.prices > div:last-child {
+  border-radius: 10px;
+  height: 300px;
+  background-color: #f7f7fc;
+  padding-left: 76px;
+  padding-right: 76px;
+  padding-top: calc((300px - 100.4px) / 2);
+  padding-bottom: calc((300px - 100.4px) / 2);
+}
+
+@media (max-width: 576px) {
+  .prices > div:last-child {
+    padding-left: 26px;
+    padding-right: 26px;
+  }
 }
